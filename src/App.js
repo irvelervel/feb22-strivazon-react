@@ -21,10 +21,17 @@ const App = () => {
     // setCart(newCart)
   }
 
-  const removeFromCart = (id) => {
-    let newCart = cart.filter((element) => element.id !== id)
+  const removeFromCart = (index) => {
+    // let newCart = cart.filter((element, i) => i !== index)
     // newCart is retaining all the elements that have an id DIFFERENT from the one you're invoking the function with!
+    // the slice method: selecting two slices without the elementin the middle and re-joining them afterwards
+
+    let firstSlice = cart.slice(0, index)
+    let secondSlice = cart.slice(index + 1)
+    let newCart = [...firstSlice, ...secondSlice]
     setCart(newCart)
+    // setCart([...cart.slice(0, index), ...cart.slice(index + 1)])
+    // HARDCORE!
   }
 
   return (

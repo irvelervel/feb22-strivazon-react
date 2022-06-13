@@ -16,7 +16,7 @@ const Cart = ({ cart, removeFromCart }) => (
             <Button
               variant="danger"
               onClick={() => {
-                removeFromCart(book.id)
+                removeFromCart(i)
               }}
             >
               <FaTrash />
